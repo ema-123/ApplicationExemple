@@ -23,8 +23,6 @@ Application.$controller("filterEtgCommandesTable1Controller", ["$scope",
 	}
 ]);
 
-
-
 Application.$controller("CommandeTable1Controller", ["$scope",
 	function($scope) {
 		"use strict";
