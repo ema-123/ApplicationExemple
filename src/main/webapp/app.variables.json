@@ -15,6 +15,17 @@
     } ],
     "operation" : "toast"
   },
+  "goToPage_Accueil" : {
+    "_id" : "wm-goToPage_Accueil-wm.NavigationVariable-1521633551678",
+    "name" : "goToPage_Accueil",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Accueil",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -28,8 +39,10 @@
     "name" : "supportedLocale",
     "owner" : "App",
     "category" : "wm.Variable",
+    "dataBinding" : [ ],
     "dataSet" : {
-      "en" : "English"
+      "en" : "English",
+      "fr-ch" : "français (Suisse)"
     },
     "type" : "string",
     "isList" : false,
