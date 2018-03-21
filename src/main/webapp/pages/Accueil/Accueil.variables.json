@@ -25,12 +25,13 @@
         "type" : "integer",
         "fullyQualifiedType" : "integer",
         "columnName" : "ID",
-        "isPrimaryKey" : false,
+        "isPrimaryKey" : true,
         "notNull" : true,
         "length" : 0,
         "precision" : 10,
-        "generator" : "assigned",
+        "generator" : "identity",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "numero",
@@ -38,11 +39,12 @@
         "fullyQualifiedType" : "integer",
         "columnName" : "NUMERO",
         "isPrimaryKey" : false,
-        "notNull" : true,
+        "notNull" : false,
         "length" : 0,
         "precision" : 10,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "client",
@@ -55,11 +57,12 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "dateCommande",
-        "type" : "date",
-        "fullyQualifiedType" : "date",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
         "columnName" : "DATE_COMMANDE",
         "isPrimaryKey" : false,
         "notNull" : false,
@@ -67,6 +70,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "statut",
@@ -79,6 +83,7 @@
         "precision" : 1,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "total",
@@ -88,15 +93,16 @@
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 0,
-        "precision" : 22,
+        "precision" : 10,
         "generator" : "assigned",
         "isRelated" : false,
-        "scale" : 9
+        "defaultValue" : "",
+        "scale" : 0
       } ],
       "entityName" : "EtgCommande",
       "fullyQualifiedName" : "ch.etg.application.exemple.etg.EtgCommande",
       "tableType" : "TABLE",
-      "primaryFields" : [ ]
+      "primaryFields" : [ "id" ]
     },
     "isDefault" : true,
     "bindCount" : 2,
@@ -109,6 +115,29 @@
   "EtgFilterEtgCommandes" : {
     "_id" : "wm-EtgFilterEtgCommandes-wm.ServiceVariable-1521641021630",
     "name" : "EtgFilterEtgCommandes",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "ch.etg.application.exemple.etg.EtgCommande",
+    "service" : "etg",
+    "operation" : "filterEtgCommandes",
+    "operationId" : "EtgCommandeController_filterEtgCommandes",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "EtgCommande"
+  },
+  "EtgFilterEtgCommandes1" : {
+    "_id" : "wm-EtgFilterEtgCommandes1-wm.ServiceVariable-1521642498890",
+    "name" : "EtgFilterEtgCommandes1",
     "owner" : "Page",
     "category" : "wm.ServiceVariable",
     "dataBinding" : [ ],

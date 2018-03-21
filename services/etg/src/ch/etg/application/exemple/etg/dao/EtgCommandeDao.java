@@ -15,14 +15,13 @@ import org.springframework.stereotype.Repository;
 import com.wavemaker.runtime.data.dao.WMGenericDaoImpl;
 
 import ch.etg.application.exemple.etg.EtgCommande;
-import ch.etg.application.exemple.etg.EtgCommandeId;
 
 /**
  * Specifies methods used to obtain and modify EtgCommande related information
  * which is stored in the database.
  */
 @Repository("etg.EtgCommandeDao")
-public class EtgCommandeDao extends WMGenericDaoImpl<EtgCommande, EtgCommandeId> {
+public class EtgCommandeDao extends WMGenericDaoImpl<EtgCommande, Integer> {
 
     @Autowired
     @Qualifier("etgTemplate")

@@ -1,34 +1,27 @@
 {
   "username" : "{WM_CLOUD_MYSQL_USER_NAME}",
   "password" : "{WM_CLOUD_MYSQL_PASSWORD}",
-  "url" : "jdbc:mysql://{WM_CLOUD_MYSQL_HOST}/etg?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
+  "url" : "jdbc:mysql://{WM_CLOUD_MYSQL_HOST}/etg2?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&createDatabaseIfNotExist=true",
   "driverClass" : "com.mysql.jdbc.Driver",
   "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
-  "serviceId" : "etg",
-  "packageName" : "ch.etg.application.exemple.etg",
+  "serviceId" : "etg2",
+  "packageName" : "ch.etg.application.exemple.etg2",
   "dbType" : "MySQL",
   "host" : "{WM_CLOUD_MYSQL_HOST}",
-  "dbName" : "etg",
-  "port" : null,
+  "dbName" : "etg2",
+  "port" : "",
   "schemaName" : null,
-  "tableFilter" : [ {
-    "table" : "ETG_COMMANDE",
-    "schema" : null
-  } ],
+  "tableFilter" : [ ],
   "schemaFilter" : [ ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,
-  "hbm2ddl" : "none",
+  "hbm2ddl" : "update",
   "maxPageSize" : 100,
   "minPoolSize" : 2,
   "maxPoolSize" : 4,
   "transactionTimeout" : 30,
   "dataSourceType" : "WM_MANAGED_DATASOURCE",
   "jndiName" : "",
-  "reloadInfo" : {
-    "reload" : false,
-    "reason" : null,
-    "message" : null
-  },
+  "reloadInfo" : null,
   "readOnly" : false
 }

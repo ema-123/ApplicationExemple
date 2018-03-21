@@ -7,9 +7,9 @@
                 <wm-panel-footer name="panel_footer1">
                     <wm-label padding="unset 0.5em" class="text-muted" caption="Addition Info" name="label1"></wm-label>
                 </wm-panel-footer>
-                <wm-table name="filterEtgCommandesTable1" title="" dataset="bind:Variables.EtgFilterEtgCommandes.dataSet" navigation="Classic">
+                <wm-table name="filterEtgCommandesTable1" title="" dataset="bind:Variables.EtgFilterEtgCommandes1.dataSet" navigation="Classic">
                     <wm-table-column binding="client" caption="Nom client" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="dateCommande" caption="Date commande" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                    <wm-table-column binding="dateCommande" caption="Date commande" pcdisplay="true" mobiledisplay="true" type="datetime"></wm-table-column>
                     <wm-table-column binding="total" caption="Montant total" pcdisplay="true" mobiledisplay="true" type="double"></wm-table-column>
                     <wm-table-column binding="statut" caption="Statut" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
                 </wm-table>
