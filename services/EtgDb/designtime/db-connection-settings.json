@@ -17,6 +17,9 @@
   }, {
     "table" : "LIGNE_COMMANDE",
     "schema" : null
+  }, {
+    "table" : "ARTICLE",
+    "schema" : null
   } ],
   "schemaFilter" : [ ],
   "impersonateUser" : false,

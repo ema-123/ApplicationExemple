@@ -34,9 +34,12 @@ public class LigneCommande implements Serializable {
 
     private Integer id;
     private int numero;
-    private String libelle;
-    private BigDecimal prix;
+    private BigDecimal prixArticle;
     private Integer commandeId;
+    private int nombreArticle;
+    private BigDecimal totalArticle;
+    private int articleId;
+    private Article article;
     private Commande commande;
 
     @Id
@@ -59,22 +62,13 @@ public class LigneCommande implements Serializable {
         this.numero = numero;
     }
 
-    @Column(name = "`LIBELLE`", nullable = false, length = 255)
-    public String getLibelle() {
-        return this.libelle;
+    @Column(name = "`PRIX_ARTICLE`", nullable = true, scale = 0, precision = 10)
+    public BigDecimal getPrixArticle() {
+        return this.prixArticle;
     }
 
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
-    }
-
-    @Column(name = "`PRIX`", nullable = true, scale = 0, precision = 10)
-    public BigDecimal getPrix() {
-        return this.prix;
-    }
-
-    public void setPrix(BigDecimal prix) {
-        this.prix = prix;
+    public void setPrixArticle(BigDecimal prixArticle) {
+        this.prixArticle = prixArticle;
     }
 
     @Column(name = "`COMMANDE_ID`", nullable = true, scale = 0, precision = 10)
@@ -84,6 +78,48 @@ public class LigneCommande implements Serializable {
 
     public void setCommandeId(Integer commandeId) {
         this.commandeId = commandeId;
+    }
+
+    @Column(name = "`NOMBRE_ARTICLE`", nullable = false, scale = 0, precision = 10)
+    public int getNombreArticle() {
+        return this.nombreArticle;
+    }
+
+    public void setNombreArticle(int nombreArticle) {
+        this.nombreArticle = nombreArticle;
+    }
+
+    @Column(name = "`TOTAL_ARTICLE`", nullable = true, scale = 0, precision = 10)
+    public BigDecimal getTotalArticle() {
+        return this.totalArticle;
+    }
+
+    public void setTotalArticle(BigDecimal totalArticle) {
+        this.totalArticle = totalArticle;
+    }
+
+    @Column(name = "`ARTICLE_ID`", nullable = false, scale = 0, precision = 10)
+    public int getArticleId() {
+        return this.articleId;
+    }
+
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`ARTICLE_ID`", referencedColumnName = "`ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_LIGNE_COMMANDE_TO_ARTHWeuq`"))
+    @Fetch(FetchMode.JOIN)
+    public Article getArticle() {
+        return this.article;
+    }
+
+    public void setArticle(Article article) {
+        if(article != null) {
+            this.articleId = article.getId();
+        }
+
+        this.article = article;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
