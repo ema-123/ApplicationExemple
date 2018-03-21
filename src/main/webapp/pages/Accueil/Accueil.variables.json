@@ -384,5 +384,27 @@
     "relatedTables" : [ ],
     "filterFields" : { },
     "package" : "ch.etg.application.exemple.etgdb.StatutCommande"
+  },
+  "serviceVariable1" : {
+    "_id" : "wm-serviceVariable1-wm.ServiceVariable-1521653359946",
+    "name" : "serviceVariable1",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "ch.etg.application.exemple.etgdb.StatutCommande",
+    "service" : "EtgDb",
+    "operation" : "filterStatutCommandes",
+    "operationId" : "StatutCommandeController_filterStatutCommandes",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "StatutCommande"
   }
 }
