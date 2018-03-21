@@ -18,79 +18,79 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import ch.etg.application.exemple.etg.EtgCommande;
+import ch.etg.application.exemple.etg.EtgArticle;
 
 /**
- * Service object for domain model class {@link EtgCommande}.
+ * Service object for domain model class {@link EtgArticle}.
  */
-public interface EtgCommandeService {
+public interface EtgArticleService {
 
     /**
-     * Creates a new EtgCommande. It does cascade insert for all the children in a single transaction.
+     * Creates a new EtgArticle. It does cascade insert for all the children in a single transaction.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on EtgCommande if any.
+     * This method overrides the input field values using Server side or database managed properties defined on EtgArticle if any.
      *
-     * @param etgCommande Details of the EtgCommande to be created; value cannot be null.
-     * @return The newly created EtgCommande.
+     * @param etgArticle Details of the EtgArticle to be created; value cannot be null.
+     * @return The newly created EtgArticle.
      */
-	EtgCommande create(@Valid EtgCommande etgCommande);
+	EtgArticle create(@Valid EtgArticle etgArticle);
 
 
 	/**
-	 * Returns EtgCommande by given id if exists.
+	 * Returns EtgArticle by given id if exists.
 	 *
-	 * @param etgcommandeId The id of the EtgCommande to get; value cannot be null.
-	 * @return EtgCommande associated with the given etgcommandeId.
-     * @throws EntityNotFoundException If no EtgCommande is found.
+	 * @param etgarticleId The id of the EtgArticle to get; value cannot be null.
+	 * @return EtgArticle associated with the given etgarticleId.
+     * @throws EntityNotFoundException If no EtgArticle is found.
 	 */
-	EtgCommande getById(Integer etgcommandeId) throws EntityNotFoundException;
+	EtgArticle getById(Integer etgarticleId) throws EntityNotFoundException;
 
     /**
-	 * Find and return the EtgCommande by given id if exists, returns null otherwise.
+	 * Find and return the EtgArticle by given id if exists, returns null otherwise.
 	 *
-	 * @param etgcommandeId The id of the EtgCommande to get; value cannot be null.
-	 * @return EtgCommande associated with the given etgcommandeId.
+	 * @param etgarticleId The id of the EtgArticle to get; value cannot be null.
+	 * @return EtgArticle associated with the given etgarticleId.
 	 */
-	EtgCommande findById(Integer etgcommandeId);
+	EtgArticle findById(Integer etgarticleId);
 
     /**
-	 * Find and return the EtgCommande for given numero  if exists.
+	 * Find and return the EtgArticle for given numero  if exists.
 	 *
 	 * @param numero value of numero; value cannot be null.
-	 * @return EtgCommande associated with the given inputs.
-     * @throws EntityNotFoundException if no matching EtgCommande found.
+	 * @return EtgArticle associated with the given inputs.
+     * @throws EntityNotFoundException if no matching EtgArticle found.
 	 */
-    EtgCommande getByNumero(Integer numero)throws EntityNotFoundException;
+    EtgArticle getByNumero(Integer numero)throws EntityNotFoundException;
 
 	/**
-	 * Updates the details of an existing EtgCommande. It replaces all fields of the existing EtgCommande with the given etgCommande.
+	 * Updates the details of an existing EtgArticle. It replaces all fields of the existing EtgArticle with the given etgArticle.
 	 *
-     * This method overrides the input field values using Server side or database managed properties defined on EtgCommande if any.
+     * This method overrides the input field values using Server side or database managed properties defined on EtgArticle if any.
      *
-	 * @param etgCommande The details of the EtgCommande to be updated; value cannot be null.
-	 * @return The updated EtgCommande.
-	 * @throws EntityNotFoundException if no EtgCommande is found with given input.
+	 * @param etgArticle The details of the EtgArticle to be updated; value cannot be null.
+	 * @return The updated EtgArticle.
+	 * @throws EntityNotFoundException if no EtgArticle is found with given input.
 	 */
-	EtgCommande update(@Valid EtgCommande etgCommande) throws EntityNotFoundException;
+	EtgArticle update(@Valid EtgArticle etgArticle) throws EntityNotFoundException;
 
     /**
-	 * Deletes an existing EtgCommande with the given id.
+	 * Deletes an existing EtgArticle with the given id.
 	 *
-	 * @param etgcommandeId The id of the EtgCommande to be deleted; value cannot be null.
-	 * @return The deleted EtgCommande.
-	 * @throws EntityNotFoundException if no EtgCommande found with the given id.
+	 * @param etgarticleId The id of the EtgArticle to be deleted; value cannot be null.
+	 * @return The deleted EtgArticle.
+	 * @throws EntityNotFoundException if no EtgArticle found with the given id.
 	 */
-	EtgCommande delete(Integer etgcommandeId) throws EntityNotFoundException;
+	EtgArticle delete(Integer etgarticleId) throws EntityNotFoundException;
 
     /**
-	 * Deletes an existing EtgCommande with the given object.
+	 * Deletes an existing EtgArticle with the given object.
 	 *
-	 * @param etgCommande The instance of the EtgCommande to be deleted; value cannot be null.
+	 * @param etgArticle The instance of the EtgArticle to be deleted; value cannot be null.
 	 */
-	void delete(EtgCommande etgCommande);
+	void delete(EtgArticle etgArticle);
 
 	/**
-	 * Find all EtgCommandes matching the given QueryFilter(s).
+	 * Find all EtgArticles matching the given QueryFilter(s).
      * All the QueryFilter(s) are ANDed to filter the results.
      * This method returns Paginated results.
 	 *
@@ -98,30 +98,30 @@ public interface EtgCommandeService {
 	 *
      * @param queryFilters Array of queryFilters to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching EtgCommandes.
+     * @return Paginated list of matching EtgArticles.
      *
      * @see QueryFilter
      * @see Pageable
      * @see Page
 	 */
     @Deprecated
-	Page<EtgCommande> findAll(QueryFilter[] queryFilters, Pageable pageable);
+	Page<EtgArticle> findAll(QueryFilter[] queryFilters, Pageable pageable);
 
     /**
-	 * Find all EtgCommandes matching the given input query. This method returns Paginated results.
+	 * Find all EtgArticles matching the given input query. This method returns Paginated results.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param query The query to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching EtgCommandes.
+     * @return Paginated list of matching EtgArticles.
      *
      * @see Pageable
      * @see Page
 	 */
-    Page<EtgCommande> findAll(String query, Pageable pageable);
+    Page<EtgArticle> findAll(String query, Pageable pageable);
 
     /**
-	 * Exports all EtgCommandes matching the given input query to the given exportType format.
+	 * Exports all EtgArticles matching the given input query to the given exportType format.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param exportType The format in which to export the data; value cannot be null.
@@ -136,11 +136,11 @@ public interface EtgCommandeService {
     Downloadable export(ExportType exportType, String query, Pageable pageable);
 
 	/**
-	 * Retrieve the count of the EtgCommandes in the repository with matching query.
+	 * Retrieve the count of the EtgArticles in the repository with matching query.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query query to filter results. No filters applied if the input is null/empty.
-	 * @return The count of the EtgCommande.
+	 * @return The count of the EtgArticle.
 	 */
 	long count(String query);
 

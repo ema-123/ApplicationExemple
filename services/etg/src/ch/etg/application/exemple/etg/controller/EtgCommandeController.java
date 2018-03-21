@@ -99,6 +99,14 @@ public class EtgCommandeController {
         return deletedEtgCommande != null;
     }
 
+    @RequestMapping(value = "/numero/{numero}", method = RequestMethod.GET)
+    @ApiOperation(value = "Returns the matching EtgCommande with given unique key values.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public EtgCommande getByNumero(@PathVariable("numero") Integer numero) {
+        LOGGER.debug("Getting EtgCommande with uniques key Numero");
+        return etgCommandeService.getByNumero(numero);
+    }
+
     /**
      * @deprecated Use {@link #findEtgCommandes(String, Pageable)} instead.
      */

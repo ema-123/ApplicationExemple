@@ -12,6 +12,9 @@
   "port" : null,
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "ETG_ARTICLE",
+    "schema" : null
+  }, {
     "table" : "ETG_COMMANDE",
     "schema" : null
   } ],

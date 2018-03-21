@@ -25,94 +25,94 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import ch.etg.application.exemple.etg.EtgCommande;
+import ch.etg.application.exemple.etg.EtgArticle;
 
 
 /**
- * ServiceImpl object for domain model class EtgCommande.
+ * ServiceImpl object for domain model class EtgArticle.
  *
- * @see EtgCommande
+ * @see EtgArticle
  */
-@Service("etg.EtgCommandeService")
+@Service("etg.EtgArticleService")
 @Validated
-public class EtgCommandeServiceImpl implements EtgCommandeService {
+public class EtgArticleServiceImpl implements EtgArticleService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EtgCommandeServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EtgArticleServiceImpl.class);
 
 
     @Autowired
-    @Qualifier("etg.EtgCommandeDao")
-    private WMGenericDao<EtgCommande, Integer> wmGenericDao;
+    @Qualifier("etg.EtgArticleDao")
+    private WMGenericDao<EtgArticle, Integer> wmGenericDao;
 
-    public void setWMGenericDao(WMGenericDao<EtgCommande, Integer> wmGenericDao) {
+    public void setWMGenericDao(WMGenericDao<EtgArticle, Integer> wmGenericDao) {
         this.wmGenericDao = wmGenericDao;
     }
 
     @Transactional(value = "etgTransactionManager")
     @Override
-	public EtgCommande create(EtgCommande etgCommande) {
-        LOGGER.debug("Creating a new EtgCommande with information: {}", etgCommande);
+	public EtgArticle create(EtgArticle etgArticle) {
+        LOGGER.debug("Creating a new EtgArticle with information: {}", etgArticle);
 
-        EtgCommande etgCommandeCreated = this.wmGenericDao.create(etgCommande);
+        EtgArticle etgArticleCreated = this.wmGenericDao.create(etgArticle);
         // reloading object from database to get database defined & server defined values.
-        return this.wmGenericDao.refresh(etgCommandeCreated);
+        return this.wmGenericDao.refresh(etgArticleCreated);
     }
 
 	@Transactional(readOnly = true, value = "etgTransactionManager")
 	@Override
-	public EtgCommande getById(Integer etgcommandeId) throws EntityNotFoundException {
-        LOGGER.debug("Finding EtgCommande by id: {}", etgcommandeId);
-        return this.wmGenericDao.findById(etgcommandeId);
+	public EtgArticle getById(Integer etgarticleId) throws EntityNotFoundException {
+        LOGGER.debug("Finding EtgArticle by id: {}", etgarticleId);
+        return this.wmGenericDao.findById(etgarticleId);
     }
 
     @Transactional(readOnly = true, value = "etgTransactionManager")
 	@Override
-	public EtgCommande findById(Integer etgcommandeId) {
-        LOGGER.debug("Finding EtgCommande by id: {}", etgcommandeId);
+	public EtgArticle findById(Integer etgarticleId) {
+        LOGGER.debug("Finding EtgArticle by id: {}", etgarticleId);
         try {
-            return this.wmGenericDao.findById(etgcommandeId);
+            return this.wmGenericDao.findById(etgarticleId);
         } catch(EntityNotFoundException ex) {
-            LOGGER.debug("No EtgCommande found with id: {}", etgcommandeId, ex);
+            LOGGER.debug("No EtgArticle found with id: {}", etgarticleId, ex);
             return null;
         }
     }
 
     @Transactional(readOnly = true, value = "etgTransactionManager")
     @Override
-    public EtgCommande getByNumero(Integer numero) {
+    public EtgArticle getByNumero(Integer numero) {
         Map<String, Object> numeroMap = new HashMap<>();
         numeroMap.put("numero", numero);
 
-        LOGGER.debug("Finding EtgCommande by unique keys: {}", numeroMap);
-        EtgCommande etgCommande = this.wmGenericDao.findByUniqueKey(numeroMap);
+        LOGGER.debug("Finding EtgArticle by unique keys: {}", numeroMap);
+        EtgArticle etgArticle = this.wmGenericDao.findByUniqueKey(numeroMap);
 
-        if (etgCommande == null){
-            LOGGER.debug("No EtgCommande found with given unique key values: {}", numeroMap);
+        if (etgArticle == null){
+            LOGGER.debug("No EtgArticle found with given unique key values: {}", numeroMap);
             throw new EntityNotFoundException(String.valueOf(numeroMap));
         }
 
-        return etgCommande;
+        return etgArticle;
     }
 
 	@Transactional(rollbackFor = EntityNotFoundException.class, value = "etgTransactionManager")
 	@Override
-	public EtgCommande update(EtgCommande etgCommande) throws EntityNotFoundException {
-        LOGGER.debug("Updating EtgCommande with information: {}", etgCommande);
+	public EtgArticle update(EtgArticle etgArticle) throws EntityNotFoundException {
+        LOGGER.debug("Updating EtgArticle with information: {}", etgArticle);
 
-        this.wmGenericDao.update(etgCommande);
-        this.wmGenericDao.refresh(etgCommande);
+        this.wmGenericDao.update(etgArticle);
+        this.wmGenericDao.refresh(etgArticle);
 
-        return etgCommande;
+        return etgArticle;
     }
 
     @Transactional(value = "etgTransactionManager")
 	@Override
-	public EtgCommande delete(Integer etgcommandeId) throws EntityNotFoundException {
-        LOGGER.debug("Deleting EtgCommande with id: {}", etgcommandeId);
-        EtgCommande deleted = this.wmGenericDao.findById(etgcommandeId);
+	public EtgArticle delete(Integer etgarticleId) throws EntityNotFoundException {
+        LOGGER.debug("Deleting EtgArticle with id: {}", etgarticleId);
+        EtgArticle deleted = this.wmGenericDao.findById(etgarticleId);
         if (deleted == null) {
-            LOGGER.debug("No EtgCommande found with id: {}", etgcommandeId);
-            throw new EntityNotFoundException(String.valueOf(etgcommandeId));
+            LOGGER.debug("No EtgArticle found with id: {}", etgarticleId);
+            throw new EntityNotFoundException(String.valueOf(etgarticleId));
         }
         this.wmGenericDao.delete(deleted);
         return deleted;
@@ -120,29 +120,29 @@ public class EtgCommandeServiceImpl implements EtgCommandeService {
 
     @Transactional(value = "etgTransactionManager")
 	@Override
-	public void delete(EtgCommande etgCommande) {
-        LOGGER.debug("Deleting EtgCommande with {}", etgCommande);
-        this.wmGenericDao.delete(etgCommande);
+	public void delete(EtgArticle etgArticle) {
+        LOGGER.debug("Deleting EtgArticle with {}", etgArticle);
+        this.wmGenericDao.delete(etgArticle);
     }
 
 	@Transactional(readOnly = true, value = "etgTransactionManager")
 	@Override
-	public Page<EtgCommande> findAll(QueryFilter[] queryFilters, Pageable pageable) {
-        LOGGER.debug("Finding all EtgCommandes");
+	public Page<EtgArticle> findAll(QueryFilter[] queryFilters, Pageable pageable) {
+        LOGGER.debug("Finding all EtgArticles");
         return this.wmGenericDao.search(queryFilters, pageable);
     }
 
     @Transactional(readOnly = true, value = "etgTransactionManager")
     @Override
-    public Page<EtgCommande> findAll(String query, Pageable pageable) {
-        LOGGER.debug("Finding all EtgCommandes");
+    public Page<EtgArticle> findAll(String query, Pageable pageable) {
+        LOGGER.debug("Finding all EtgArticles");
         return this.wmGenericDao.searchByQuery(query, pageable);
     }
 
     @Transactional(readOnly = true, value = "etgTransactionManager")
     @Override
     public Downloadable export(ExportType exportType, String query, Pageable pageable) {
-        LOGGER.debug("exporting data in the service etg for table EtgCommande to {} format", exportType);
+        LOGGER.debug("exporting data in the service etg for table EtgArticle to {} format", exportType);
         return this.wmGenericDao.export(exportType, query, pageable);
     }
 
