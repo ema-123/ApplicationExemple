@@ -1,4 +1,4 @@
-Application.$controller("AccueilPageController", ["$scope", function ($scope) {
+Application.$controller("ArticlesPageController", ["$scope", function ($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
@@ -23,7 +23,7 @@ Application.$controller("filterEtgCommandesTable1Controller", ["$scope",
 	}
 ]);
 
-Application.$controller("CommandeTable1Controller", ["$scope",
+Application.$controller("ArticleTable1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;

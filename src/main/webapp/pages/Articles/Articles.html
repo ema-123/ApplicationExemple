@@ -1,0 +1,19 @@
+<wm-page data-ng-controller="ArticlesPageController" pagetitle="Accueil" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="Menu"></wm-left-panel>
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-table editmode="inline" name="ArticleTable1" title="Article List" dataset="bind:Variables.EtgDbArticleData.dataSet" navigation="Classic">
+                <wm-table-column binding="numero" caption="No article" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="libelle" caption="Libellé article" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="prix" caption="Prix unitaire" textalignment="right" edit-widget-type="number" type="big_decimal" generator="assigned" formatpattern="toCurrency" currencypattern="CHF" fractionsize="2" show="true"
+                    readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
+            </wm-table>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

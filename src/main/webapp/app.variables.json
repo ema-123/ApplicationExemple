@@ -15,14 +15,29 @@
     } ],
     "operation" : "toast"
   },
-  "goToPage_Accueil" : {
-    "_id" : "wm-goToPage_Accueil-wm.NavigationVariable-1521633551678",
-    "name" : "goToPage_Accueil",
+  "goToPage_Articles" : {
+    "_id" : "wm-goToPage_Articles-wm.NavigationVariable-1521654834043",
+    "name" : "goToPage_Articles",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
-    "pageName" : "Accueil",
+    "pageName" : "Articles",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Commandes" : {
+    "_id" : "wm-goToPage_Accueil-wm.NavigationVariable-1521633551678",
+    "name" : "goToPage_Commandes",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Commandes",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "Commandes",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },

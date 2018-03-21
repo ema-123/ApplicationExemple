@@ -1,5 +1,9 @@
 [ {
-  "name" : "Accueil",
+  "name" : "Articles",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Commandes",
   "type" : "PAGE",
   "params" : [ ]
 }, {

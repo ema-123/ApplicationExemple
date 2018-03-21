@@ -2,10 +2,10 @@
     <wm-nav name="leftnavigation" type="pills" layout="stacked">
         <wm-nav-item name="list_dashboard"></wm-nav-item>
         <wm-nav-item name="list_order">
-            <wm-anchor caption="Commandes" name="orderLink" iconclass="wi wi-file"></wm-anchor>
+            <wm-anchor caption="Commandes" name="orderLink" iconclass="wi wi-wallet" on-click="Actions.goToPage_Commandes.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_inventory">
-            <wm-anchor caption="Articles" name="inventoryLink" iconclass="wi wi-tag"></wm-anchor>
+            <wm-anchor caption="Articles" name="inventoryLink" iconclass="wi wi-tag" on-click="Actions.goToPage_Articles.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_support"></wm-nav-item>
     </wm-nav>
