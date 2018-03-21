@@ -9,16 +9,19 @@
   "dbType" : "MySQL",
   "host" : "{WM_CLOUD_MYSQL_HOST}",
   "dbName" : "EtgDb",
-  "port" : "",
+  "port" : null,
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "ARTICLE",
+    "schema" : null
+  }, {
     "table" : "COMMANDE",
     "schema" : null
   }, {
     "table" : "LIGNE_COMMANDE",
     "schema" : null
   }, {
-    "table" : "ARTICLE",
+    "table" : "STATUT_COMMANDE",
     "schema" : null
   } ],
   "schemaFilter" : [ ],

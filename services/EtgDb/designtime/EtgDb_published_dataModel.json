@@ -277,35 +277,6 @@
         "type" : "user-defined"
       },
       "constraintList" : [ ],
-      "fieldName" : "statut",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "boolean",
-      "length" : 0,
-      "name" : "STATUT",
-      "nullable" : false,
-      "oldName" : "STATUT",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "period" : false,
-      "precision" : 1,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "boolean",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
       "fieldName" : "total",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -318,6 +289,35 @@
       "oldName" : "TOTAL",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "commandeStatut",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "COMMANDE_STATUT",
+      "nullable" : false,
+      "oldName" : "COMMANDE_STATUT",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
       "period" : false,
@@ -353,7 +353,36 @@
       "name" : "PRIMARY",
       "virtual" : false
     },
-    "relations" : [ ],
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "cascadeOptions" : {
+        "cascadeRemove" : "NONE",
+        "cascadeReplace" : true
+      },
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fetchOptions" : {
+        "fetch" : true,
+        "columnsFilter" : [ ]
+      },
+      "fieldName" : "statutCommande",
+      "mappings" : [ {
+        "sourceColumn" : "COMMANDE_STATUT",
+        "targetColumn" : "ID"
+      } ],
+      "name" : "FK_COMMANDE_TO_STATUT_COVzr36",
+      "parentFetchOptions" : {
+        "fetch" : false,
+        "columnsFilter" : [ ]
+      },
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "COMMANDE",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STATUT_COMMANDE",
+      "virtual" : false
+    } ],
     "schema" : null,
     "temporals" : [ ],
     "type" : "TABLE"
@@ -647,6 +676,89 @@
       "targetTable" : "COMMANDE",
       "virtual" : false
     } ],
+    "schema" : null,
+    "temporals" : [ ],
+    "type" : "TABLE"
+  }, {
+    "catalog" : "EtgDb",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "ID",
+      "nullable" : false,
+      "oldName" : "ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "libelle",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "LIBELLE",
+      "nullable" : false,
+      "oldName" : "LIBELLE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "StatutCommande",
+    "filter" : null,
+    "fullyQualifiedName" : "ch.etg.application.exemple.etgdb.StatutCommande",
+    "ignoreRefreshAfterInsert" : false,
+    "name" : "STATUT_COMMANDE",
+    "oldName" : "STATUT_COMMANDE",
+    "primaryKey" : {
+      "columns" : [ "ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ ],
     "schema" : null,
     "temporals" : [ ],
     "type" : "TABLE"

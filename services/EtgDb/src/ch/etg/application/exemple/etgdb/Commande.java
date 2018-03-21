@@ -14,9 +14,12 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PostPersist;
 import javax.persistence.Table;
@@ -24,6 +27,8 @@ import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -40,8 +45,9 @@ public class Commande implements Serializable {
     private int numero;
     private String client;
     private Date dateCommande;
-    private boolean statut;
     private BigDecimal total;
+    private int commandeStatut;
+    private StatutCommande statutCommande;
     private List<LigneCommande> ligneCommandes;
 
     @Id
@@ -82,15 +88,6 @@ public class Commande implements Serializable {
         this.dateCommande = dateCommande;
     }
 
-    @Column(name = "`STATUT`", nullable = false)
-    public boolean isStatut() {
-        return this.statut;
-    }
-
-    public void setStatut(boolean statut) {
-        this.statut = statut;
-    }
-
     @Column(name = "`TOTAL`", nullable = true, scale = 0, precision = 10)
     public BigDecimal getTotal() {
         return this.total;
@@ -98,6 +95,30 @@ public class Commande implements Serializable {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    @Column(name = "`COMMANDE_STATUT`", nullable = false, scale = 0, precision = 10)
+    public int getCommandeStatut() {
+        return this.commandeStatut;
+    }
+
+    public void setCommandeStatut(int commandeStatut) {
+        this.commandeStatut = commandeStatut;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`COMMANDE_STATUT`", referencedColumnName = "`ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_COMMANDE_TO_STATUT_COVzr36`"))
+    @Fetch(FetchMode.JOIN)
+    public StatutCommande getStatutCommande() {
+        return this.statutCommande;
+    }
+
+    public void setStatutCommande(StatutCommande statutCommande) {
+        if(statutCommande != null) {
+            this.commandeStatut = statutCommande.getId();
+        }
+
+        this.statutCommande = statutCommande;
     }
 
     @JsonInclude(Include.NON_EMPTY)
