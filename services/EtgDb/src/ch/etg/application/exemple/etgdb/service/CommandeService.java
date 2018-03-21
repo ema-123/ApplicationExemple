@@ -19,6 +19,7 @@ import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
 import ch.etg.application.exemple.etgdb.Commande;
+import ch.etg.application.exemple.etgdb.LigneCommande;
 
 /**
  * Service object for domain model class {@link Commande}.
@@ -157,6 +158,17 @@ public interface CommandeService {
 	 */
 	Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable);
 
+    /*
+     * Returns the associated ligneCommandes for given Commande id.
+     *
+     * @param id value of id; value cannot be null
+     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
+     * @return Paginated list of associated LigneCommande instances.
+     *
+     * @see Pageable
+     * @see Page
+     */
+    Page<LigneCommande> findAssociatedLigneCommandes(Integer id, Pageable pageable);
 
 }
 

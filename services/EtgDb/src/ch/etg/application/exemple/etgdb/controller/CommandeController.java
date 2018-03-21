@@ -33,6 +33,7 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
 import ch.etg.application.exemple.etgdb.Commande;
+import ch.etg.application.exemple.etgdb.LigneCommande;
 import ch.etg.application.exemple.etgdb.service.CommandeService;
 
 
@@ -158,6 +159,14 @@ public class CommandeController {
         return commandeService.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @RequestMapping(value="/{id:.+}/ligneCommandes", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the ligneCommandes instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<LigneCommande> findAssociatedLigneCommandes(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated ligneCommandes");
+        return commandeService.findAssociatedLigneCommandes(id, pageable);
+    }
 
     /**
 	 * This setter method should only be used by unit tests
