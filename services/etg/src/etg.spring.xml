@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="ch.etg.application.exemple.etg.controller,ch.etg.application.exemple.etg.service,ch.etg.application.exemple.etg.dao"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:etg.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+    <bean id="etgHikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="jdbcUrl" value="${etg.url}"/>
+        <property name="driverClassName" value="${etg.driverClass}"/>
+        <property name="username" value="${etg.username}"/>
+        <property name="password" value="${etg.password}"/>
+        <property name="maximumPoolSize" value="${etg.maxPoolSize}"/>
+        <property name="minimumIdle" value="${etg.minPoolSize}"/>
+        <property name="connectionTimeout" value="30000" />
+        <property name="validationTimeout" value="5000" />
+        <property name="idleTimeout" value="600000" />
+        <property name="maxLifetime" value="1800000" />
+        <property name="initializationFailTimeout" value="-1" />
+        <property name="leakDetectionThreshold" value="120000" />
+        <property name="registerMbeans" value="false" />
+    </bean>
+
+    <bean id="etgWMManagedDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close" lazy-init="true">
+        <constructor-arg ref="etgHikariConfig"/>
+    </bean>
+
+    <bean id="etgEntityInterceptor" class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor"/>
+
+    <bean id="etgSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="etgDataSource"/>
+        <property name="packagesToScan" value="ch.etg.application.exemple.etg"/>
+        <property name="entityInterceptor" ref="etgEntityInterceptor"/>
+        <property name="entityTypeFilters" ref="nonHistoryEntitiesFilter"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                etg-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+
+        <property name="hibernateProperties" ref="etgHibernateProperties"/>
+    </bean>
+    <bean id="etgTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="etgSessionFactory"/>
+        <property name="defaultTimeout" value="${etg.transactionTimeout}"/>
+    </bean>
+    <bean id="etgTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="etgSessionFactory"/>
+    </bean>
+
+    <bean id="etgWMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
+        <property name="template" ref="etgTemplate"/>
+    </bean>
+    <bean id="etgWMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
+        <property name="template" ref="etgTemplate"/>
+        <property name="serviceId" value="etg"/>
+    </bean>
+
+    <bean id="etgHibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.dialect">
+                ${etg.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                ${etg.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+                <prop key="hibernate.schema_update.unique_constraint_strategy">
+                    skip
+                </prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="etgPageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${etg.maxPageSize}"/>
+        <property name="fallbackPageable">
+            <bean  class="org.springframework.data.domain.PageRequest">
+                <constructor-arg  value="0"/>
+                <constructor-arg  value="20"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="etgDataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
+        <property name="dataSourceType" value="${etg.dataSourceType}"/>
+        <property name="jndiName" value="${etg.jndiName}"/>
+        <property name="serviceId" value="etg"/>
+    </bean>
+
+
+    <tx:annotation-driven/>
+
+</beans>
+
