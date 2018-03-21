@@ -55,14 +55,14 @@
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
+      "partOfUniqueKey" : true,
       "period" : false,
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "number",
-      "unique" : false
+      "unique" : true
     }, {
       "columnValue" : {
         "insertable" : true,
@@ -180,7 +180,14 @@
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ ],
+    "constraints" : [ {
+      "columns" : [ "NUMERO" ],
+      "composite" : false,
+      "name" : "UK_COMMANDE_NUMERO",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
     "entityName" : "Commande",
     "filter" : null,
     "fullyQualifiedName" : "ch.etg.application.exemple.etgdb.Commande",
