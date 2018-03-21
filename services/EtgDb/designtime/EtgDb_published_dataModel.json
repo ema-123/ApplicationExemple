@@ -1,0 +1,61 @@
+{
+  "description" : "EtgDb",
+  "draft" : false,
+  "name" : "EtgDb",
+  "packageName" : "ch.etg.application.exemple.etgdb",
+  "tables" : [ {
+    "catalog" : "EtgDb",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "ID",
+      "nullable" : false,
+      "oldName" : "ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Commande",
+    "filter" : null,
+    "fullyQualifiedName" : "ch.etg.application.exemple.etgdb.Commande",
+    "ignoreRefreshAfterInsert" : false,
+    "name" : "COMMANDE",
+    "oldName" : "COMMANDE",
+    "primaryKey" : {
+      "columns" : [ "ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ ],
+    "schema" : null,
+    "temporals" : [ ],
+    "type" : "TABLE"
+  } ]
+}

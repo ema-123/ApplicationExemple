@@ -13,7 +13,7 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/etg/src</directory>
+                <directory>services/EtgDb/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -103,7 +103,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>services/etg/src</source>
+                                <source>services/EtgDb/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>
