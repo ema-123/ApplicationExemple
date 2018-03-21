@@ -2,18 +2,16 @@
     <wm-header content="header" name="header1"></wm-header>
     <wm-content name="content1">
         <wm-left-panel columnwidth="2" content="leftnav" name="Menu"></wm-left-panel>
-        <wm-page-content columnwidth="10" name="page_content1">
-            <wm-panel subheading="Liste des commandes" iconclass="wi wi-account-circle" autoclose="outsideClick" title="Commandes" name="commandes">
-                <wm-panel-footer name="panel_footer1">
-                    <wm-label padding="unset 0.5em" class="text-muted" caption="Addition Info" name="label1"></wm-label>
-                </wm-panel-footer>
-                <wm-table name="filterEtgCommandesTable1" title="" dataset="bind:Variables.EtgFilterEtgCommandes1.dataSet" navigation="Classic">
-                    <wm-table-column binding="client" caption="Nom client" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="dateCommande" caption="Date commande" pcdisplay="true" mobiledisplay="true" type="datetime"></wm-table-column>
-                    <wm-table-column binding="total" caption="Montant total" pcdisplay="true" mobiledisplay="true" type="double"></wm-table-column>
-                    <wm-table-column binding="statut" caption="Statut" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
-                </wm-table>
-            </wm-panel>
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-table editmode="inline" name="EtgCommandeTable1" title="La liste des commandes" dataset="bind:Variables.EtgEtgCommandeData1.dataSet" navigation="Classic" show="true">
+                <wm-table-column binding="client" caption="Client" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                <wm-table-column binding="dateCommande" caption="Date Commande" generator="assigned" pcdisplay="true" mobiledisplay="true" type="datetime"></wm-table-column>
+                <wm-table-column binding="total" caption="Total" generator="assigned" pcdisplay="true" mobiledisplay="true" type="big_decimal"></wm-table-column>
+                <wm-table-column binding="statut" caption="Statut" generator="assigned" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
+                <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+            </wm-table>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>

@@ -20,13 +20,6 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/etg2/src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -111,7 +104,6 @@
                         <configuration>
                             <sources>
                                 <source>services/etg/src</source>
-                                <source>services/etg2/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>
