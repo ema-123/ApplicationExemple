@@ -4,11 +4,11 @@
         <wm-left-panel columnwidth="2" content="leftnav" name="Menu"></wm-left-panel>
         <wm-page-content columnwidth="12" name="page_content1">
             <wm-table editmode="inline" name="CommandeTable1" title="bind:appLocale.order_list_label" dataset="bind:Variables.EtgDbCommandeData1.dataSet" navigation="Classic">
-                <wm-table-column binding="client" caption="Client" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
-                <wm-table-column binding="dateCommande" caption="Date Commande" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
-                <wm-table-column binding="total" caption="Total" edit-widget-type="number" type="big_decimal" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="CHF" fractionsize="2" show="true"></wm-table-column>
-                <wm-table-column binding="statutCommande.libelle" caption="Commande Libelle" widget-type="label" primary-key="false" edit-widget-type="select" related-entity-name="StatutCommande" type="string" generator="assigned" dataset="bind:Variables.lesStatuts.dataSet"
-                    datafield="id" displayfield="libelle" show="true" readonly="false">
+                <wm-table-column binding="client" caption="Nom client" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="dateCommande" caption="Date commande" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="total" caption="Montant total" edit-widget-type="number" type="big_decimal" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="CHF" fractionsize="2" show="true"></wm-table-column>
+                <wm-table-column binding="statutCommande.libelle" caption="Statut" widget-type="label" primary-key="false" edit-widget-type="select" related-entity-name="StatutCommande" type="string" generator="assigned" dataset="bind:Variables.lesStatutsLeRetour.dataSet"
+                    datafield="All Fields" displayfield="libelle" defaultvalue="bind:Variables.lesStatutsLeRetour.firstRecord" show="true" readonly="false" required="true">
                     <wm-label caption="{{row.getProperty('statutCommande.libelle')}}" class="" data-ng-class=""></wm-label>
                 </wm-table-column>
                 <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
