@@ -23,7 +23,9 @@ Application.$controller("filterEtgCommandesTable1Controller", ["$scope",
 	}
 ]);
 
-Application.$controller("EtgCommandeTable1Controller", ["$scope",
+
+
+Application.$controller("CommandeTable1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;
