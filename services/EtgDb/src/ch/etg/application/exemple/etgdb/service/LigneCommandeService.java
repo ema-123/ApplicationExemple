@@ -53,14 +53,6 @@ public interface LigneCommandeService {
 	 */
 	LigneCommande findById(Integer lignecommandeId);
 
-    /**
-	 * Find and return the LigneCommande for given numero  if exists.
-	 *
-	 * @param numero value of numero; value cannot be null.
-	 * @return LigneCommande associated with the given inputs.
-     * @throws EntityNotFoundException if no matching LigneCommande found.
-	 */
-    LigneCommande getByNumero(int numero)throws EntityNotFoundException;
 
 	/**
 	 * Updates the details of an existing LigneCommande. It replaces all fields of the existing LigneCommande with the given ligneCommande.

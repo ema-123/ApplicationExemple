@@ -7,6 +7,13 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "Commandes2",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "commandeId",
+    "type" : "integer"
+  } ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
   "params" : [ ]
@@ -19,6 +26,13 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "commandEdit",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "commandeId",
+    "type" : "integer"
+  } ]
+}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]
@@ -30,6 +44,13 @@
   "name" : "leftnav",
   "type" : "LEFTNAV",
   "params" : [ ]
+}, {
+  "name" : "lignesCommande",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "commandeId",
+    "type" : "integer"
+  } ]
 }, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",

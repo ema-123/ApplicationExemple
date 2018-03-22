@@ -1,1 +1,16 @@
-{ }
+{
+  "goToPage_CommandeV2" : {
+    "_id" : "wm-goToPage_CommandeV2-wm.NavigationVariable-1521710474536",
+    "name" : "goToPage_CommandeV2",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Commandes2",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  }
+}

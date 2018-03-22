@@ -190,35 +190,6 @@
         "type" : "user-defined"
       },
       "constraintList" : [ ],
-      "fieldName" : "numero",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "integer",
-      "length" : 0,
-      "name" : "NUMERO",
-      "nullable" : false,
-      "oldName" : "NUMERO",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "period" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
       "fieldName" : "client",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -328,14 +299,7 @@
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ {
-      "columns" : [ "NUMERO" ],
-      "composite" : false,
-      "name" : "UK_COMMANDE_NUMERO",
-      "schemaName" : null,
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
+    "constraints" : [ ],
     "entityName" : "Commande",
     "filter" : null,
     "fullyQualifiedName" : "ch.etg.application.exemple.etgdb.Commande",
@@ -413,35 +377,6 @@
       "period" : false,
       "precision" : 10,
       "primaryKey" : true,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
-      "fieldName" : "numero",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "integer",
-      "length" : 0,
-      "name" : "NUMERO",
-      "nullable" : false,
-      "oldName" : "NUMERO",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "period" : false,
-      "precision" : 10,
-      "primaryKey" : false,
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "number",
@@ -592,14 +527,7 @@
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ {
-      "columns" : [ "NUMERO" ],
-      "composite" : false,
-      "name" : "UK_LIGNE_COMMANDE_NUMERO",
-      "schemaName" : null,
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
+    "constraints" : [ ],
     "entityName" : "LigneCommande",
     "filter" : null,
     "fullyQualifiedName" : "ch.etg.application.exemple.etgdb.LigneCommande",
@@ -629,35 +557,6 @@
         "fetch" : true,
         "columnsFilter" : [ ]
       },
-      "fieldName" : "article",
-      "mappings" : [ {
-        "sourceColumn" : "ARTICLE_ID",
-        "targetColumn" : "ID"
-      } ],
-      "name" : "FK_LIGNE_COMMANDE_TO_ARTHWeuq",
-      "parentFetchOptions" : {
-        "fetch" : false,
-        "columnsFilter" : [ ]
-      },
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceColumnsNotUniqueKey" : true,
-      "sourceTable" : "LIGNE_COMMANDE",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ARTICLE",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "cascadeOptions" : {
-        "cascadeRemove" : "NONE",
-        "cascadeReplace" : true
-      },
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fetchOptions" : {
-        "fetch" : true,
-        "columnsFilter" : [ ]
-      },
       "fieldName" : "commande",
       "mappings" : [ {
         "sourceColumn" : "COMMANDE_ID",
@@ -674,6 +573,35 @@
       "sourceTable" : "LIGNE_COMMANDE",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "COMMANDE",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "cascadeOptions" : {
+        "cascadeRemove" : "NONE",
+        "cascadeReplace" : true
+      },
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fetchOptions" : {
+        "fetch" : true,
+        "columnsFilter" : [ ]
+      },
+      "fieldName" : "article",
+      "mappings" : [ {
+        "sourceColumn" : "ARTICLE_ID",
+        "targetColumn" : "ID"
+      } ],
+      "name" : "FK_LIGNE_COMMANDE_TO_ARTHWeuq",
+      "parentFetchOptions" : {
+        "fetch" : false,
+        "columnsFilter" : [ ]
+      },
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "LIGNE_COMMANDE",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ARTICLE",
       "virtual" : false
     } ],
     "schema" : null,

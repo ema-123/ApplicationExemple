@@ -99,14 +99,6 @@ public class LigneCommandeController {
         return deletedLigneCommande != null;
     }
 
-    @RequestMapping(value = "/numero/{numero}", method = RequestMethod.GET)
-    @ApiOperation(value = "Returns the matching LigneCommande with given unique key values.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public LigneCommande getByNumero(@PathVariable("numero") int numero) {
-        LOGGER.debug("Getting LigneCommande with uniques key Numero");
-        return ligneCommandeService.getByNumero(numero);
-    }
-
     /**
      * @deprecated Use {@link #findLigneCommandes(String, Pageable)} instead.
      */

@@ -168,19 +168,6 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "numero",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
-        "columnName" : "NUMERO",
-        "isPrimaryKey" : false,
-        "notNull" : true,
-        "length" : 0,
-        "precision" : 10,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
         "fieldName" : "client",
         "type" : "string",
         "fullyQualifiedType" : "string",
@@ -316,19 +303,6 @@
         "length" : 0,
         "precision" : 10,
         "generator" : "identity",
-        "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
-        "fieldName" : "numero",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
-        "columnName" : "NUMERO",
-        "isPrimaryKey" : false,
-        "notNull" : true,
-        "length" : 0,
-        "precision" : 10,
-        "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0

@@ -100,14 +100,6 @@ public class CommandeController {
         return deletedCommande != null;
     }
 
-    @RequestMapping(value = "/numero/{numero}", method = RequestMethod.GET)
-    @ApiOperation(value = "Returns the matching Commande with given unique key values.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Commande getByNumero(@PathVariable("numero") int numero) {
-        LOGGER.debug("Getting Commande with uniques key Numero");
-        return commandeService.getByNumero(numero);
-    }
-
     /**
      * @deprecated Use {@link #findCommandes(String, Pageable)} instead.
      */

@@ -54,14 +54,6 @@ public interface CommandeService {
 	 */
 	Commande findById(Integer commandeId);
 
-    /**
-	 * Find and return the Commande for given numero  if exists.
-	 *
-	 * @param numero value of numero; value cannot be null.
-	 * @return Commande associated with the given inputs.
-     * @throws EntityNotFoundException if no matching Commande found.
-	 */
-    Commande getByNumero(int numero)throws EntityNotFoundException;
 
 	/**
 	 * Updates the details of an existing Commande. It replaces all fields of the existing Commande with the given commande.
