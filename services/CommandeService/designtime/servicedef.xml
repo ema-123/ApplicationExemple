@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="CommandeService" class="ch.etg.application.exemple.commandeservice.CommandeService" type="JavaService" springFile="CommandeService.spring.xml">
+    <dataobjects/>
+</service>
