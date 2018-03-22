@@ -277,24 +277,6 @@
     } ],
     "package" : "ch.etg.application.exemple.etgdb.Commande"
   },
-  "goToPage_Commandes2" : {
-    "_id" : "wm-goToPage_Commandes2-wm.NavigationVariable-1521719139582",
-    "name" : "goToPage_Commandes2",
-    "owner" : "Page",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ {
-      "target" : "pageName",
-      "value" : "Commandes2",
-      "type" : "string"
-    } ],
-    "operation" : "gotoPage",
-    "dataSet" : [ {
-      "type" : "integer",
-      "target" : "commandeId",
-      "value" : "bind:Variables.EtgDbCommandeData1.dataSet.data[$i].id"
-    } ],
-    "pageTransitions" : "none"
-  },
   "lesStatuts" : {
     "_id" : "wm-lesStatuts-wm.ServiceVariable-1521651478908",
     "name" : "lesStatuts",

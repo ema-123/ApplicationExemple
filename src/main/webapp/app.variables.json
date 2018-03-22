@@ -41,6 +41,24 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_Commandes2" : {
+    "_id" : "wm-goToPage_Commandes2-wm.NavigationVariable-1521719139582",
+    "name" : "goToPage_Commandes2",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Commandes2",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "integer",
+      "target" : "commandeId",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.id"
+    } ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
