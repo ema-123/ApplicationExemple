@@ -12,7 +12,7 @@
                                     <wm-composite name="composite1">
                                         <wm-label class="col-md-3 control-label" name="label1" caption="Nom client"></wm-label>
                                         <wm-container class="col-md-9" name="container2">
-                                            <wm-text name="text1" datavalue="bind:Variables.commandeModel2.dataSet.client" readonly="true" autocomplete="false" placeholder=""></wm-text>
+                                            <wm-text name="text1" datavalue="bind:Variables.serviceVariable2.dataSet.client" readonly="true" autocomplete="false" placeholder=""></wm-text>
                                         </wm-container>
                                     </wm-composite>
                                 </wm-gridcolumn>
@@ -22,7 +22,7 @@
                                     <wm-composite name="composite5">
                                         <wm-label class="col-md-3 control-label" name="label5" caption="Date commande"></wm-label>
                                         <wm-container class="col-md-9" name="container6" show="true">
-                                            <wm-date name="date1" datavalue="bind:Variables.commandeModel2.dataSet.dateCommande" datepattern="dd.MM.yyyy" outputformat="dd.MM.yyyy" showbuttonbar="false" readonly="true" disabled="false"></wm-date>
+                                            <wm-date name="date1" datavalue="bind:Variables.serviceVariable2.dataSet.dateCommande" datepattern="dd.MM.yyyy" outputformat="dd.MM.yyyy" showbuttonbar="false" readonly="true" disabled="false"></wm-date>
                                         </wm-container>
                                     </wm-composite>
                                 </wm-gridcolumn>
@@ -30,7 +30,7 @@
                                     <wm-composite name="composite4">
                                         <wm-label class="col-md-3 control-label" name="label4" caption="Total"></wm-label>
                                         <wm-container class="col-md-9" name="container5">
-                                            <wm-text name="text4" readonly="true" autocomplete="false" datavalue="bind:Variables.commandeModel2.dataSet.total"></wm-text>
+                                            <wm-text name="text4" readonly="true" autocomplete="false" datavalue="bind:Variables.commandeModel2.dataSet.total" placeholder="TODO"></wm-text>
                                         </wm-container>
                                     </wm-composite>
                                 </wm-gridcolumn>
@@ -38,7 +38,7 @@
                                     <wm-composite name="composite3">
                                         <wm-label class="col-md-3 control-label" name="label3" caption="Statut"></wm-label>
                                         <wm-container class="col-md-9" name="container4">
-                                            <wm-text name="text3" readonly="true" autocomplete="false" datavalue="bind:Variables.commandeModel2.dataSet.statutCommande.libelle" placeholder=""></wm-text>
+                                            <wm-text name="text3" readonly="true" autocomplete="false" datavalue="bind:Variables.serviceVariable2.dataSet.statutCommande.libelle" placeholder=""></wm-text>
                                         </wm-container>
                                     </wm-composite>
                                 </wm-gridcolumn>

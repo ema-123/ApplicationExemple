@@ -4,13 +4,14 @@
         <wm-left-panel columnwidth="2" content="leftnav" name="Menu"></wm-left-panel>
         <wm-page-content columnwidth="12" name="page_content1">
             <wm-table editmode="inline" name="CommandeTable1" title="bind:appLocale.order_list_label" dataset="bind:Variables.EtgDbCommandeData1.dataSet" navigation="Basic" on-datarender="CommandeTable1Datarender($scope, $data)">
-                <wm-table-column binding="client" caption="Nom client" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="client" caption="Nom client" edit-widget-type="text" type="string" generator="assigned" formatpattern="None" currencypattern="CHF" fractionsize="2" show="true" readonly="false" required="true"></wm-table-column>
                 <wm-table-column binding="dateCommande" caption="Date commande" edit-widget-type="date" type="date" generator="assigned" datepattern="dd.MM.yyyy" formatpattern="toDate" show="true" readonly="false" required="true"></wm-table-column>
+                <wm-table-column binding="total" caption="Montant total" textalignment="right" edit-widget-type="number" type="big_decimal" readonly="true" formatpattern="toCurrency" currencypattern="CHF" fractionsize="2" searchable="false"
+                    show="true"></wm-table-column>
                 <wm-table-column binding="statutCommande.id" caption="Statut" widget-type="label" primary-key="true" edit-widget-type="select" related-entity-name="StatutCommande" type="integer" generator="identity" dataset="bind:Variables.lesStatutsLeRetour.dataSet"
                     datafield="id" displayfield="libelle" defaultvalue="bind:Variables.lesStatutsLeRetour.firstRecord.libelle" show="true" readonly="false" required="true">
                     <wm-label caption="{{row.getProperty('statutCommande.libelle')}}" class="" data-ng-class=""></wm-label>
                 </wm-table-column>
-                <wm-table-column caption="Montant Total" type="number" readonly="true" searchable="false" show="true"></wm-table-column>
                 <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
                 <wm-table-action key="addNewRow" display-name="Ajouter commande" show="true" class="btn-primary" iconclass="wi wi-plus" title="Ajouter commande" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
                 <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>

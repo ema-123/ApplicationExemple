@@ -1,5 +1,5 @@
 <wm-partial data-ng-controller="lignesCommandePageController" name="partial1">
-    <wm-table editmode="inline" name="LigneCommandeTable1" title="Edition d'une commande" dataset="bind:Variables.EtgDbLigneCommandeData.dataSet" navigation="Classic" enablesort="false" subheading="Liste des articles de la commande" on-beforerowupdate="LigneCommandeTable1Beforerowupdate($event, $scope, $rowData)"
+    <wm-table editmode="inline" name="LigneCommandeTable1" title="Détail commande" dataset="bind:Variables.EtgDbLigneCommandeData.dataSet" navigation="Classic" enablesort="false" subheading="Liste des articles de la commande" on-beforerowupdate="LigneCommandeTable1Beforerowupdate($event, $scope, $rowData)"
         on-beforerowinsert="LigneCommandeTable1Beforerowinsert($event, $scope, $rowData)">
         <wm-table-column binding="id" caption="No ligne" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
         <wm-table-column binding="nombreArticle" caption="Nombre Article" edit-widget-type="number" type="integer" generator="assigned" formatpattern="numberToString" fractionsize="0" show="true" readonly="false" required="true"></wm-table-column>

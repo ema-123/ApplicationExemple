@@ -733,5 +733,31 @@
     "transformationRequired" : false,
     "saveInPhonegap" : false,
     "controller" : "StatutCommande"
+  },
+  "serviceVariable2" : {
+    "_id" : "wm-serviceVariable2-wm.ServiceVariable-1521738602166",
+    "name" : "serviceVariable2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:pageParams.commandeId",
+      "type" : "integer"
+    } ],
+    "type" : "ch.etg.application.exemple.etgdb.Commande",
+    "service" : "EtgDb",
+    "operation" : "getCommande",
+    "operationId" : "CommandeController_getCommande",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Commande"
   }
 }
