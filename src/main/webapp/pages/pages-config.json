@@ -26,13 +26,6 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "commande",
-  "type" : "PARTIAL",
-  "params" : [ {
-    "name" : "commandeId",
-    "type" : "integer"
-  } ]
-}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]

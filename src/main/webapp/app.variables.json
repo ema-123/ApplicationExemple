@@ -57,6 +57,14 @@
       "target" : "client",
       "value" : "bind:Widgets.CommandeTable1.selecteditem.client",
       "type" : "java.lang.String"
+    }, {
+      "target" : "statutCommande",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.statutCommande",
+      "type" : "ch.etg.application.exemple.etgdb.StatutCommande"
+    }, {
+      "target" : "dateCommande",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.dateCommande",
+      "type" : "java.sql.Date"
     } ],
     "dataSet" : {
       "total" : "",
