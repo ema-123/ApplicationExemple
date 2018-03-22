@@ -26,7 +26,7 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "commandEdit",
+  "name" : "commande",
   "type" : "PARTIAL",
   "params" : [ {
     "name" : "commandeId",

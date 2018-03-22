@@ -1,4 +1,4 @@
-Application.$controller("commandEditPageController", ["$scope", function ($scope) {
+Application.$controller("commandePageController", ["$scope", function ($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
@@ -15,7 +15,6 @@ Application.$controller("commandEditPageController", ["$scope", function ($scope
     };
 
 }]);
-
 
 Application.$controller("CommandeLiveForm1Controller", ["$scope",
 	function($scope) {

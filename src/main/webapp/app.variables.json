@@ -15,6 +15,64 @@
     } ],
     "operation" : "toast"
   },
+  "commadeModel" : {
+    "_id" : "wm-commadeModel-wm.Variable-1521732594459",
+    "name" : "commadeModel",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "client",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.client",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "dateCommande",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.dateCommande",
+      "type" : "java.sql.Date"
+    }, {
+      "target" : "commandeStatut",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.statutCommande.id",
+      "type" : "java.lang.Integer"
+    } ],
+    "dataSet" : {
+      "total" : "",
+      "client" : "",
+      "statutCommande" : {
+        "libelle" : "",
+        "id" : ""
+      },
+      "id" : "",
+      "dateCommande" : "",
+      "commandeStatut" : ""
+    },
+    "type" : "ch.etg.application.exemple.etgdb.Commande",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "commandeModel2" : {
+    "_id" : "wm-commandeModel2-wm.Variable-1521732966985",
+    "name" : "commandeModel2",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "client",
+      "value" : "bind:Widgets.CommandeTable1.selecteditem.client",
+      "type" : "java.lang.String"
+    } ],
+    "dataSet" : {
+      "total" : "",
+      "client" : "",
+      "statutCommande" : {
+        "libelle" : "",
+        "id" : ""
+      },
+      "id" : "",
+      "dateCommande" : "",
+      "commandeStatut" : ""
+    },
+    "type" : "ch.etg.application.exemple.etgdb.Commande",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "goToPage_Articles" : {
     "_id" : "wm-goToPage_Articles-wm.NavigationVariable-1521654834043",
     "name" : "goToPage_Articles",

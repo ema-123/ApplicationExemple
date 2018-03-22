@@ -1,6 +1,6 @@
 {
   "EtgDbCommandeData" : {
-    "_id" : "wm-EtgDbCommandeData-wm.LiveVariable-1521713032219",
+    "_id" : "wm-EtgDbCommandeData-wm.LiveVariable-1521731326458",
     "name" : "EtgDbCommandeData",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
@@ -125,7 +125,7 @@
       "primaryFields" : [ "id" ]
     },
     "isDefault" : true,
-    "bindCount" : 1,
+    "bindCount" : 2,
     "tableName" : "COMMANDE",
     "tableType" : "TABLE",
     "properties" : [ "statutCommande" ],

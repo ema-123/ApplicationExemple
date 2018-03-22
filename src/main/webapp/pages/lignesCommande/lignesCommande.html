@@ -1,14 +1,20 @@
 <wm-partial data-ng-controller="lignesCommandePageController" name="partial1">
-    <wm-table editmode="inline" name="LigneCommandeTable1" title="Ligne_commande List" dataset="bind:Variables.EtgDbLigneCommandeData.dataSet" navigation="Classic" enablesort="false">
-        <wm-table-column binding="prixArticle" caption="Prix Article" edit-widget-type="number" type="big_decimal" generator="assigned" show="true" readonly="false"></wm-table-column>
-        <wm-table-column binding="nombreArticle" caption="Nombre Article" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false" required="true"></wm-table-column>
-        <wm-table-column binding="totalArticle" caption="Total Article" edit-widget-type="number" type="big_decimal" generator="assigned" show="true" readonly="false"></wm-table-column>
+    <wm-table editmode="inline" name="LigneCommandeTable1" title="Edition d'une commande" dataset="bind:Variables.EtgDbLigneCommandeData.dataSet" navigation="Classic" enablesort="false" subheading="Liste des articles de la commande" on-beforerowupdate="LigneCommandeTable1Beforerowupdate($event, $scope, $rowData)"
+        on-beforerowinsert="LigneCommandeTable1Beforerowinsert($event, $scope, $rowData)">
+        <wm-table-column binding="id" caption="No ligne" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+        <wm-table-column binding="nombreArticle" caption="Nombre Article" edit-widget-type="number" type="integer" generator="assigned" formatpattern="numberToString" fractionsize="0" show="true" readonly="false" required="true"></wm-table-column>
+        <wm-table-column binding="article.id" caption="Article" widget-type="label" primary-key="true" edit-widget-type="select" related-entity-name="Article" type="integer" generator="identity" dataset="bind:Variables.articles.dataSet"
+            datafield="id" displayfield="libelle" defaultvalue="bind:Variables.articles.firstRecord.libelle" show="true" readonly="false" required="true" on-mouseleave="article_idOnMouseleave($event, $scope, rowData)">
+            <wm-label caption="{{row.getProperty('article.id') + &quot; - &quot; + row.getProperty('article.libelle')}}" class="" data-ng-class=""></wm-label>
+        </wm-table-column>
+        <wm-table-column binding="article.prix" caption="Prix unitaire" primary-key="false" edit-widget-type="number" related-entity-name="Article" type="big_decimal" generator="assigned" readonly="true" show="true"></wm-table-column>
         <wm-table-column binding="commande.id" caption="Commande Id" primary-key="true" edit-widget-type="number" related-entity-name="Commande" type="integer" generator="identity" formatpattern="None" defaultvalue="bind:pageParams.commandeId"
-            sortable="false" show="true" readonly="false" required="true"></wm-table-column>
-        <wm-table-column binding="article.id" caption="Article Id" primary-key="true" edit-widget-type="select" related-entity-name="Article" type="integer" generator="identity" datafield="id" displayfield="id" show="true" readonly="false"
-            required="true"></wm-table-column>
+            sortable="false" show="false" readonly="false" required="true"></wm-table-column>
+        <wm-table-column binding="customField" caption="Prix total article" widget-type="label" edit-widget-type="number" type="number" readonly="true" mobiledisplay="false" sortable="false" searchable="false" show="true">
+            <wm-label caption="{{row.getProperty('article.prix') * row.getProperty('nombreArticle')}}" class="" data-ng-class=""></wm-label>
+        </wm-table-column>
         <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
-        <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+        <wm-table-action key="addNewRow" display-name="Ajouter un article" show="true" class="btn-primary" iconclass="wi wi-plus" title="Ajouter un article" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
         <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
         <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
     </wm-table>

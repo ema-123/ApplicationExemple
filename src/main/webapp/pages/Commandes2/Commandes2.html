@@ -13,7 +13,11 @@
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow5">
-                    <wm-gridcolumn columnwidth="12" name="gridcolumn9"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                        <wm-container name="container2" content="commande">
+                            <wm-param name="commandeId" value="bind:Widgets.container1.Widgets.LigneCommandeTable1.selecteditem.commande.id" type="integer"></wm-param>
+                        </wm-container>
+                    </wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>
         </wm-page-content>

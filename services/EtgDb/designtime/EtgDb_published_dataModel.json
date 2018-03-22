@@ -389,35 +389,6 @@
         "type" : "user-defined"
       },
       "constraintList" : [ ],
-      "fieldName" : "prixArticle",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "big_decimal",
-      "length" : 0,
-      "name" : "PRIX_ARTICLE",
-      "nullable" : true,
-      "oldName" : "PRIX_ARTICLE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "period" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
       "fieldName" : "commandeId",
       "foreignKey" : true,
       "generatorType" : "assigned",
@@ -457,35 +428,6 @@
       "name" : "NOMBRE_ARTICLE",
       "nullable" : false,
       "oldName" : "NOMBRE_ARTICLE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "period" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
-      "fieldName" : "totalArticle",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "big_decimal",
-      "length" : 0,
-      "name" : "TOTAL_ARTICLE",
-      "nullable" : true,
-      "oldName" : "TOTAL_ARTICLE",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -557,35 +499,6 @@
         "fetch" : true,
         "columnsFilter" : [ ]
       },
-      "fieldName" : "commande",
-      "mappings" : [ {
-        "sourceColumn" : "COMMANDE_ID",
-        "targetColumn" : "ID"
-      } ],
-      "name" : "FK_LIGNE_COMMANDE_TO_COM0NpDF",
-      "parentFetchOptions" : {
-        "fetch" : false,
-        "columnsFilter" : [ ]
-      },
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceColumnsNotUniqueKey" : true,
-      "sourceTable" : "LIGNE_COMMANDE",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "COMMANDE",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "cascadeOptions" : {
-        "cascadeRemove" : "NONE",
-        "cascadeReplace" : true
-      },
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fetchOptions" : {
-        "fetch" : true,
-        "columnsFilter" : [ ]
-      },
       "fieldName" : "article",
       "mappings" : [ {
         "sourceColumn" : "ARTICLE_ID",
@@ -602,6 +515,35 @@
       "sourceTable" : "LIGNE_COMMANDE",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "ARTICLE",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "cascadeOptions" : {
+        "cascadeRemove" : "NONE",
+        "cascadeReplace" : true
+      },
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fetchOptions" : {
+        "fetch" : true,
+        "columnsFilter" : [ ]
+      },
+      "fieldName" : "commande",
+      "mappings" : [ {
+        "sourceColumn" : "COMMANDE_ID",
+        "targetColumn" : "ID"
+      } ],
+      "name" : "FK_LIGNE_COMMANDE_TO_COM0NpDF",
+      "parentFetchOptions" : {
+        "fetch" : false,
+        "columnsFilter" : [ ]
+      },
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "LIGNE_COMMANDE",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "COMMANDE",
       "virtual" : false
     } ],
     "schema" : null,
