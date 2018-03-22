@@ -4,7 +4,7 @@
         <wm-table-column binding="id" caption="No ligne" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
         <wm-table-column binding="nombreArticle" caption="Nombre Article" edit-widget-type="number" type="integer" generator="assigned" formatpattern="numberToString" fractionsize="0" show="true" readonly="false" required="true"></wm-table-column>
         <wm-table-column binding="article.id" caption="Article" widget-type="label" primary-key="true" edit-widget-type="select" related-entity-name="Article" type="integer" generator="identity" dataset="bind:Variables.articles.dataSet"
-            datafield="id" displayfield="libelle" defaultvalue="bind:Variables.articles.firstRecord.libelle" show="true" readonly="false" required="true" on-mouseleave="article_idOnMouseleave($event, $scope, rowData)">
+            datafield="id" displayfield="libelle" show="true" readonly="false" required="true" on-mouseleave="article_idOnMouseleave($event, $scope, rowData)">
             <wm-label caption="{{row.getProperty('article.id') + &quot; - &quot; + row.getProperty('article.libelle')}}" class="" data-ng-class=""></wm-label>
         </wm-table-column>
         <wm-table-column binding="article.prix" caption="Prix unitaire" primary-key="false" edit-widget-type="number" related-entity-name="Article" type="big_decimal" generator="assigned" readonly="true" show="true"></wm-table-column>

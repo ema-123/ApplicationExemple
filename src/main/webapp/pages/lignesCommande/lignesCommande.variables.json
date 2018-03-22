@@ -258,19 +258,6 @@
           "isRelated" : false,
           "defaultValue" : "",
           "scale" : 0
-        }, {
-          "fieldName" : "total",
-          "type" : "big_decimal",
-          "fullyQualifiedType" : "big_decimal",
-          "columnName" : "TOTAL",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 0,
-          "precision" : 10,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
